@@ -85,7 +85,7 @@ congress-image {
     background-color: rgb(0, 0, 0); /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
   }
-  
+    
   /* Modal Content/Box */
   .modal-content {
     background-color: #fefefe;
@@ -139,4 +139,25 @@ congress-image {
   a:hover {
     cursor: pointer;
   }
-  
+  #jumbo-content {
+    padding:20px;
+    background-color: rgba(0, 0, 128, 0.466);
+    
+    
+  }
+  #jumbo-button {
+    margin-top: 50px;
+    margin-left:20px;
+  }
+  .jumbotron {
+    
+      background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a3/United_States_Capitol_west_front_edit2.jpg");
+      /* background-attachment: fixed; */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: auto;
+      padding-bottom: 5%
+     
+  }

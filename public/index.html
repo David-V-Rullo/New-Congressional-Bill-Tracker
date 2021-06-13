@@ -13,99 +13,114 @@
     <link href="css/bootstrap.css" rel="stylesheet">
   </head>
   <body>
-    <div class="container-fluid">
+    <div class="jumbotron">
+      <div class="col-md-4" id="jumbo-content">
+        <h1>What is Happening in the United States Congress</h1>
+        <p class="lead"> A current snapshot of the bills floating in the U.S. Congress: what they are about, and who is voting on them. Because knowing is half the battle..</p>
+      </div>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button" id="jumbo-button">Login</a>
+      </p>
+    </div>
+    <!-- <div class="container-fluid">      
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/United_States_Capitol_west_front_edit2.jpg" class="img-fluid" alt="Photo of U.S. Capitol building">
+        <div class="col-md-5">
+          <h1 class="display-4">What is Happening in the United States Congress</h1>
+          <p class="lead"> A current snapshot of the bills floating in the U.S. Congress: what they are about, and who is voting on them. Because knowing is half the battle..</p>
+        </div>         
+      </div> -->
+    <!-- <div class="container-fluid">
       <div class="row justify-content-around">
         <div class="col-md-6">
           <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/United_States_Capitol_west_front_edit2.jpg">
         </div>
-        <div class="col-md-6" id="title-card" style="margin-top: 25%">
+        <div class="col-md-4" id="title-card" style="margin-top: 25%">
           <h4 class="hero-heading">
             What is Happening in the United States Congress
           </h4>
           <br />
-          <p>
-            A current snapshot of the bills floating in the U.S. Congress: what
-            they are about, and who is voting on them. Because knowing is half
-            the battle.
-          </p>
+         
         </div>
-      </div>
-      <div class="row body-content">
-        <div class="col-md-5 side-bar">
-          <div class="search-field">
-            <input id="input-text" type="text" placeholder="Search" />
-              <select class="search-select-topic" id="topic">
-              <!-- <label for="topic">Choose a Bill Topic:</label> -->
-              <option>Select a Topic</option>
-              <option>Public Lands and Natural Resources</option>
-              <option>Science, Technology, Communications</option>
-              <option>Economics and Public Finance</option>
-             </select>
-            <input
-              class="button search-select-button"
-              type="button"
-              value="Past Week"
-              id="week-search"
-            />
-            <input
-              class="button search-select-button"
-              type="button"
-              value="Past Month"
-              id="month-search"
-            />
-            <input
-              class="button search-select-button"
-              type="button"
-              value="Current Congress"
-              id="congress-search"
-            />
-            <button class="search-submit" id="search-submit">Search</button>
-          </div>
-        </div>
-        <div class="col-md-7">
-          <div class="bill-card">
-            <h4 id="bill-id">
-              
-            </h4>
-            <p id="bill-title">Bill Title Text</p>
-            <ul>
-              <li>
-                <p id="sponsor">Sponsor:&nbsp;<a id="sponsor-title"></a><a id="sponsor-name"></a><a id="sponsor-party"></a></p>
-              </li>
-              <li>
-                <p>Committee:&nbsp;<span id="committee"></span></p>
-              </li>
-            </ul>
-            <p id="bill-long-title"></p>
-            <div class="bill-status">
-              <button class="status-button inactive-status" id="introduced">Introduced</button>
-              <button class="status-button inactive-status" id="pass-house">
-                Passed House
-              </button>
-              <button class="status-button inactive-status" id="pass-senate">
-                Passed Senate
-              </button>
-              <button class="status-button inactive-status" id="became-law">
-                Became Law
-              </button>
+      </div> -->
+      <div class="container-fluid">
+        <div class="row body-content">
+          <div class="col-md-3 side-bar">
+            <div class="search-field">
+              <input id="input-text" type="text" placeholder="Search" />
+                <select class="search-select-topic" id="topic">
+                <!-- <label for="topic">Choose a Bill Topic:</label> -->
+                <option>Select a Topic</option>
+                <option>Public Lands and Natural Resources</option>
+                <option>Science, Technology, Communications</option>
+                <option>Economics and Public Finance</option>
+               </select>
+              <input
+                class="button search-select-button"
+                type="button"
+                value="Past Week"
+                id="week-search"
+              />
+              <input
+                class="button search-select-button"
+                type="button"
+                value="Past Month"
+                id="month-search"
+              />
+              <input
+                class="button search-select-button"
+                type="button"
+                value="Current Congress"
+                id="congress-search"
+              />
+              <button class="search-submit" id="search-submit">Search</button>
             </div>
           </div>
-          <section id="date-search-section">
-            <h1>Search Results</h1>
-            <div id="date-search-results">
+          <div class="col-md-7">
+            <div class="bill-card">
+              <h4 id="bill-id">
+                
+              </h4>
+              <p id="bill-title">Bill Title Text</p>
+              <ul>
+                <li>
+                  <p id="sponsor">Sponsor:&nbsp;<a id="sponsor-title"></a><a id="sponsor-name"></a><a id="sponsor-party"></a></p>
+                </li>
+                <li>
+                  <p>Committee:&nbsp;<span id="committee"></span></p>
+                </li>
+              </ul>
+              <p id="bill-long-title"></p>
+              <div class="bill-status">
+                <button class="status-button inactive-status" id="introduced">Introduced</button>
+                <button class="status-button inactive-status" id="pass-house">
+                  Passed House
+                </button>
+                <button class="status-button inactive-status" id="pass-senate">
+                  Passed Senate
+                </button>
+                <button class="status-button inactive-status" id="became-law">
+                  Became Law
+                </button>
+              </div>
             </div>
-            <div>
-              <button id="morePrevious">&lt;&lt;</button>
-              <button id="previous">&lt;</button>
-              <p>Page: <span id="page-number"></span></p>
-              <button id="next">&gt;</button>
-              <button id="moreNext">&gt;&gt;</button>
-            </div>
-          </section>
-          <!-- end date results -->
+            <section id="date-search-section">
+              <h1>Search Results</h1>
+              <div id="date-search-results">
+              </div>
+              <div>
+                <button id="morePrevious">&lt;&lt;</button>
+                <button id="previous">&lt;</button>
+                <p>Page: <span id="page-number"></span></p>
+                <button id="next">&gt;</button>
+                <button id="moreNext">&gt;&gt;</button>
+              </div>
+            </section>
+            <!-- end date results -->
+          </div>
         </div>
       </div>
-    </div>
+      </div>
+
     <!-- Creating coment to set upstream -->
     <!-- The Modal -->
     <div id="myModal" class="modal">
