@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS congress_db;
+CREATE DATABASE congress_db;

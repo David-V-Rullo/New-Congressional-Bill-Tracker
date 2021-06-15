@@ -1,0 +1,29 @@
+[
+    {
+        "name":"Bill Pascrell",
+        "party":"Democrat",
+        "state":"NJ",
+        "district":"9",
+        "phone":"202-225-5751",
+        "office":"2409 Rayburn House Office Building; Washington DC 20515-3009",
+        "link":"https://pascrell.house.gov"
+    },
+    {
+        "name":"Robert Men�ndez",
+        "party":"Democrat",
+        "state":"NJ",
+        "district":"",
+        "phone":"202-224-4744",
+        "office":"528 Hart Senate Office Building Washington DC 20510",
+        "link":"https://www.menendez.senate.gov"
+    },
+    {
+        "name":"Cory Booker",
+        "party":"Democrat",
+        "state":"NJ",
+        "district":"",
+        "phone":"202-224-3224",
+        "office":"359 Dirksen Senate Office Building Washington DC 20510",
+        "link":"https://www.booker.senate.gov"
+    }
+]

@@ -24,19 +24,7 @@ function getZipRep() {
         .then(function (locRes) {
             console.log(JSON.stringify(locRes))
             
-            // billOutput=(JSON.stringify(locRes))
-            // console.log(Object.keys(locRes))
-            // console.log(JSON.parse(billOutput))
-            // billData=(JSON.parse(billOutput))
-            // //BILL ID FOR NEWEST BILL
-            // billNewestId=billData.results[0].bills[0].bill_id;
-            // //Bill Sponsor Newest Bill
-            // billNewestSponsor=billData.results[0].bills[0].sponsor_name;
-            // //Bill Title Newest
-            // billNewestTitle=billData.results[0].bills[0].short_title;
 
-            // //need text elements for all 3 above
-            // billTextEl.innerText=billNewestId;
         })
 }
 
