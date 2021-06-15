@@ -1,26 +1,20 @@
-congress-image {
-    /* position: relative; */
-    background-size: cover;
-    size: 50%;
-  }
-  #title-card {
-    background-color: rgba(0, 0, 128, 0.596);
-    padding: 50px;
-    position: relative;
-    color: white;
-    text-shadow: 1px 1px black;
-  }
+body {
+  
+  
+}
   .side-bar {
     background-color: rgba(0, 0, 128, 0.74);
     color: white;
     padding-top: 30px;
     padding-left: 10px;
-    float: left;
     height: 800px;
   }
   .bill-card {
     padding: 10px;
     margin-left: 8%;
+    margin-top:30px;
+    background-color: white;
+    color: black;
   }
   #bill-id {
     font-weight: bold;
@@ -45,6 +39,8 @@ congress-image {
     color: white;
     justify-content: space-around;
   }
+
+  /* Search buttons and fields */
   .search-select-topic,
   .button {
     background-color: white;
@@ -52,26 +48,25 @@ congress-image {
     width: 80%;
     text-align: center;
   }
+  #time-search {
+    margin-top: 8px;
+    padding: 5px
+  }
+  #topic {
+    margin-bottom: 10px;
+  }
+  #search-submit {
+    margin-top: 10px;
+  }
   .search-select-button,
   .button:focus {
     background-color: rgb(201, 201, 201);
     box-shadow: 0px 0px 5px white;
   }
-  footer {
-    width: 100%;
-    margin-bottom: 30px;
-    padding: 30px;
-    background-color: rgba(0, 0, 128, 0.74);
-    color: white;
-    position: fixed;
-  }
   .body-content {
     height: 100%;
     padding: 0;
     margin: 0;
-  }
-  .search-field {
-    padding: 10px;
   }
   .modal {
     display: none; /* Hidden by default */

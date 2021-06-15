@@ -43,9 +43,9 @@
         </div>
       </div> -->
       <div class="container-fluid">
-        <div class="row body-content">
+        <div class="row justify-content-start">
           <div class="col-md-3 side-bar">
-            <div class="search-field">
+            <h5>Search by content or topic:</h5>
               <input id="input-text" type="text" placeholder="Search" />
                 <select class="search-select-topic" id="topic">
                 <!-- <label for="topic">Choose a Bill Topic:</label> -->
@@ -54,28 +54,28 @@
                 <option>Science, Technology, Communications</option>
                 <option>Economics and Public Finance</option>
                </select>
+               <h5>Search by Timeframe:</h5>
               <input
                 class="button search-select-button"
                 type="button"
                 value="Past Week"
-                id="week-search"
+                id="time-search"
               />
               <input
                 class="button search-select-button"
                 type="button"
                 value="Past Month"
-                id="month-search"
+                id="time-search"
               />
               <input
                 class="button search-select-button"
                 type="button"
                 value="Current Congress"
-                id="congress-search"
+                id="time-search"
               />
               <button class="search-submit" id="search-submit">Search</button>
             </div>
-          </div>
-          <div class="col-md-7">
+          <div class="col-md-5">
             <div class="bill-card">
               <h4 id="bill-id">
                 
@@ -103,7 +103,7 @@
                 </button>
               </div>
             </div>
-            <section id="date-search-section">
+            <!-- <section id="date-search-section">
               <h1>Search Results</h1>
               <div id="date-search-results">
               </div>
@@ -114,7 +114,7 @@
                 <button id="next">&gt;</button>
                 <button id="moreNext">&gt;&gt;</button>
               </div>
-            </section>
+            </section> -->
             <!-- end date results -->
           </div>
         </div>
