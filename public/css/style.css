@@ -1,21 +1,20 @@
 body {
-  
-  
+ 
 }
   .side-bar {
-    background-color: rgba(0, 0, 128, 0.74);
+    background-color: navy;
     color: white;
-    padding-top: 30px;
-    padding-left: 10px;
+    /* padding-top: 30px;
+    padding-left: 10px; */
     height: 800px;
   }
-  .bill-card {
+  /* .bill-card {
     padding: 10px;
     margin-left: 8%;
     margin-top:30px;
     background-color: white;
     color: black;
-  }
+  } */
   #bill-id {
     font-weight: bold;
   }
@@ -135,17 +134,13 @@ body {
     cursor: pointer;
   }
   #jumbo-content {
-    padding:20px;
     background-color: rgba(0, 0, 128, 0.466);
+    color: white;
+    background-image: linear-gradient(to bottom, navy, rgba(0, 0, 128, 0.1));
     
-    
-  }
-  #jumbo-button {
-    margin-top: 50px;
-    margin-left:20px;
   }
   .jumbotron {
-    
+      text-shadow: 2px, 2px, black;
       background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a3/United_States_Capitol_west_front_edit2.jpg");
       /* background-attachment: fixed; */
       background-position: center;
@@ -155,4 +150,11 @@ body {
       height: auto;
       padding-bottom: 5%
      
+  }
+  #login-button {
+    float: right;
+  }
+  #navbar {
+    background-color: navy;
+    color: white;
   }
