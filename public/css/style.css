@@ -158,3 +158,16 @@ body {
     background-color: maroon;
     color: white;
     }
+  .live-session {
+    background-color: maroon;
+    color: antiquewhite;
+    font-size: large;
+  }
+  #leg-activities{
+    font-size: 38px;
+    color: maroon;
+  }
+  #bill-heading {
+    font-size: 38px;
+    color: maroon;
+  }
