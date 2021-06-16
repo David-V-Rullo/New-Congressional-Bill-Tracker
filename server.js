@@ -19,6 +19,7 @@ const sess = {
 };
 
 // app.engine('handlebars', hbs.engine);
+app.set('views', './views')
 app.set('view engine', 'ejs');
 
 app.use(express.json());
