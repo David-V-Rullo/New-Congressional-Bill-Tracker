@@ -14,7 +14,7 @@ var billLongTitle = $("#bill-long-title");
 var introducedDateEl = $("#introduced");
 
 // Modal variables
-var modalSponTitle = $("#rep-title");
+var modalSponTitle = $("#rep-title"); 
 var modalSponName = $("#rep-name");
 var modalSponParty = $("#rep-party");
 var modalSponBio = $("#rep-bio");
@@ -166,6 +166,9 @@ function billsByDate(date = currentCongress) {
   fetch(url, {
     headers: { "X-API-Key": "jHHlm068RlyEusHIX91YA9zmZrvEtDyGplugF6tH" },
   })
+  // $.get("/api/ext/date-search", {
+  //   reqUrl: url,
+  // })
     .then(function (response) {
       if (!response.ok) {
         throw response.json();
