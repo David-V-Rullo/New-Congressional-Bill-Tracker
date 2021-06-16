@@ -8,8 +8,8 @@ const axios = require('axios');
 //   "key": "jHHlm068RlyEusHIX91YA9zmZrvEtDyGplugF6tH"
 // }
 
-router.get("/date-search", async (req, res) => {
-    console.log("GET /api/ext/date-search");
+router.get("/propublica", async (req, res) => {
+    console.log("GET /api/ext/propublica");
     try {
         var key = req.body.key;
         console.log("THE URL: " + req.body.url);
