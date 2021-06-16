@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link href="../public/css/style.css" rel="stylesheet" />
+
+    <title>Congressional Bill Tracker || Login</title>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="col-md-5 p-5" id="jumbo-content">
+        <h1>What is Happening in the United States Congress</h1>
+        <p class="lead">
+          A current snapshot of the bills floating in the U.S. Congress: what
+          they are about, and who is voting on them. Because knowing is half the
+          battle..
+        </p>
+      </div>
+    </div>
+    <div class="container-fluid" id="navbar">
+      <div class="row p-2">
+        <div class="col-md-2">
+          <h5>Home</h5>
+        </div>
+        <!-- <div class="col-md-10">
+          <button class="btn-success" id="login-button">Login</button> -->
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid" id="sidebar">
+      <div class="row justify-content-start">
+        <div class="col-md-3 side-bar p-2">
+          <h5>Get Ready!</h5>
+          <p class="p-4 mx-auto">
+            By logging in you get to see what your Representatives are working on and what they want you to know. You can also track some of your favorite bills.
+          </p>
+        </div>
+        <div class="col-md-7 mx-auto">
+          <h3 class="text-center px-5 mt-2">Sign Up!</h3>
+          <div class="container-fluid">
+            <div class="w-75 p-3 my-5 mx-auto border border-primary form-control-lg">              
+                <label for="email-signup" class="form-label"
+                  >Email Address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email-signup"
+                  placeholder="gwash@woodenteeth.com"
+                />
+                <label for="password-signup" class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password-signup"
+                  placeholder=""
+                />
+                <button type="submit" class="btn btn-primary my-5">
+                  Login
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2" id="sidebar-two">
+          <h5>Congressional Session Tracker</h5>
+          <h5>Upcoming Elections</h5>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

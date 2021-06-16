@@ -1,0 +1,173 @@
+body {
+ 
+}
+  .side-bar {
+    background-color: navy;
+    color: white;
+    /* padding-top: 30px;
+    padding-left: 10px; */
+    height: 800px;
+  }
+  /* .bill-card {
+    padding: 10px;
+    margin-left: 8%;
+    margin-top:30px;
+    background-color: white;
+    color: black;
+  } */
+  #bill-id {
+    font-weight: bold;
+  }
+  .bill-card li {
+    list-style: none;
+  }
+  .status-button {
+    width: 100%;
+    font-size: 12px;
+  }
+  .active-status {
+    background-color: green;
+    color: white;
+  }
+  .inactive-status {
+    background-color: rgb(182, 180, 180);
+  }
+  .search-submit {
+    width: 40%;
+    background-color: green;
+    color: white;
+    justify-content: space-around;
+  }
+
+  /* Search buttons and fields */
+  .search-select-topic,
+  .button {
+    background-color: white;
+    color: black;
+    width: 80%;
+    text-align: center;
+  }
+  #time-search {
+    margin-top: 8px;
+    padding: 5px
+  }
+  #topic {
+    margin-bottom: 10px;
+  }
+  #search-submit {
+    margin-top: 10px;
+  }
+  .search-select-button,
+  .button:focus {
+    background-color: rgb(201, 201, 201);
+    box-shadow: 0px 0px 5px white;
+  }
+  .body-content {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  }
+    
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 20% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 10px solid navy;
+    width: 60%;
+    box-shadow: 10px 10px 40px black;
+    position: relative;
+  }
+  #modal-image-container {
+    display: inline-block;
+    align-content: space-around;
+    position: relative;
+    left: 50px;
+    margin: auto;
+    /* border: 3px solid navy; */
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    text-align: center;
+  }
+  #modal-image {
+    border-bottom: 2px solid rgb(151, 52, 52);
+    padding-bottom: 10px;
+    height: 200px;
+    width: 150px;
+  }
+  #modal-interior {
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: rgb(151, 52, 52);
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+    position: absolute;
+    top: -10px;
+    right: 10px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  a:hover {
+    cursor: pointer;
+  }
+  #jumbo-content {
+    background-color: rgba(0, 0, 128, 0.466);
+    color: white;
+    background-image: linear-gradient(to bottom, navy, rgba(0, 0, 128, 0.1));
+    
+  }
+  .jumbotron {
+      text-shadow: 2px, 2px, black;
+      background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a3/United_States_Capitol_west_front_edit2.jpg");
+      /* background-attachment: fixed; */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: auto;
+      padding-bottom: 5%
+     
+  }
+  #login-button {
+    float: right;
+  }
+  #navbar {
+    background-color: maroon;
+    color: white;
+    }
+  .live-session {
+    background-color: maroon;
+    color: antiquewhite;
+    font-size: large;
+  }
+  #leg-activities{
+    font-size: 38px;
+    color: maroon;
+  }
+  #bill-heading {
+    font-size: 38px;
+    color: maroon;
+  }
