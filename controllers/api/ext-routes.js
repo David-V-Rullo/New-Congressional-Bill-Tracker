@@ -2,7 +2,7 @@ const router = require("express").Router();
 const passport = require("../../config/passport");
 const axios = require('axios');
 
-
+//Required body for GET /propublica
 // {
 // 	"url": "https://api.propublica.org/congress/v1/bills/search.json?sort=date&dir=desc",
 //   "key": "jHHlm068RlyEusHIX91YA9zmZrvEtDyGplugF6tH"
@@ -21,7 +21,25 @@ router.get("/propublica", async (req, res) => {
         //     });
         console.log(apiData.data);
         res.status(200).json(apiData.data);
-        //res.status(200).json(apiData);
+    } catch (err) {
+        console.error(err);
+        res.status(401).json(err);
+    }
+});
+
+
+//Required body for GET /wiki
+// {
+// 	"url": "query url",
+// }
+router.get("/wiki", async (req, res) => {
+    console.log("GET /api/ext/wiki");
+    try {
+        console.log("THE URL: " + req.body.url);
+        const apiData = await axios.get(req.body.url);
+        //const apiData = await axios.get("https://en.wikipedia.org/api/rest_v1/page/summary/An%C3%ADbal_Acevedo_Vil%C3%A1");
+        console.log(apiData.data);
+        res.status(200).json(apiData.data);
     } catch (err) {
         console.error(err);
         res.status(401).json(err);
