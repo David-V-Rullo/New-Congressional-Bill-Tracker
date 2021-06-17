@@ -7,6 +7,12 @@ const userData = [
     zip: 07101,
     password: "password",
   },
+  {
+    name: 'John Name',
+    email: "jname@email.com",
+    zip: 07102,
+    password: "password123",
+  },
 
 ];
 
