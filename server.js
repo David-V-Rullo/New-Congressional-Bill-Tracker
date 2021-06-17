@@ -15,6 +15,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
+app.use('/css', express.static(__dirname + 'public/css'))
 // We need to use sessions to keep track of our user's login status
 app.use(
   session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
@@ -24,7 +25,7 @@ app.use(passport.session());
 
 // Requiring our routes
 app.use(routes);
-
+app.set('view engine', 'ejs')
 
 // Syncing our database and logging a message to the user upon success
 sequelize.sync({ force: false }).then(() => {
