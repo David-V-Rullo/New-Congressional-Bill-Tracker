@@ -11,8 +11,6 @@ router.get("/", async (req, res) => {
       //   console.log("GET /api/ext/probill");
       //   try {
             var key = "jHHlm068RlyEusHIX91YA9zmZrvEtDyGplugF6tH";
-            console.log(req.body.key);
-            console.log("THE URL: " + req.body.url);
             const apiData = await axios.get("https://api.propublica.org/congress/v1/bills/search.json", {headers: { "X-API-Key": key }});
             // const apiData = await axios.get(
             //     "url": "https://api.propublica.org/congress/v1/bills/search.json",
@@ -39,7 +37,7 @@ router.get("/login", (req, res) => {
 // If a user who is not logged in tries to access this route they will be redirected to the signup page
 router.get("/user", (req, res) => {
   console.log("GET /members");
-res.render('user')
+res.render('user', {name:"dave", hobby:"farting"})
 });
 
 module.exports = router;
