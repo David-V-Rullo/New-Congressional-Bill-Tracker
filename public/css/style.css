@@ -1,5 +1,5 @@
 body {
- 
+ background-color: #ffff;
 }
   .side-bar {
     background-color: navy;
@@ -21,10 +21,8 @@ body {
   .bill-card li {
     list-style: none;
   }
-  .status-button {
-    width: 100%;
-    font-size: 12px;
-  }
+  #status-button {
+  }  
   .active-status {
     background-color: green;
     color: white;
@@ -135,7 +133,7 @@ body {
   }
   #jumbo-content {
     background-color: rgba(0, 0, 128, 0.466);
-    color: white;
+    color: antiquewhite;
     background-image: linear-gradient(to bottom, navy, rgba(0, 0, 128, 0.1));
     
   }
@@ -148,7 +146,8 @@ body {
       background-size: cover;
       width: 100%;
       height: auto;
-      padding-bottom: 5%
+      padding-bottom: 5%;
+      padding-top: 5%;
      
   }
   #login-button {
@@ -156,7 +155,8 @@ body {
   }
   #navbar {
     background-color: maroon;
-    color: white;
+    color: gold;
+    z-index: 1;
     }
   .live-session {
     background-color: maroon;
@@ -169,5 +169,5 @@ body {
   }
   #bill-heading {
     font-size: 38px;
-    color: maroon;
+    color:maroon;
   }
