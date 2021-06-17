@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link href="../public/css/style.css" rel="stylesheet" />
+
+    <title>Congressional Bill Tracker || Signup</title>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="col-md-5 p-5" id="jumbo-content">
+        <h1>What is Happening in the United States Congress</h1>
+        <p class="lead">
+          A current snapshot of the bills floating in the U.S. Congress: what
+          they are about, and who is voting on them. Because knowing is half the
+          battle..
+        </p>
+      </div>
+    </div>
+    <div class="container-fluid" id="navbar">
+      <div class="row p-2">
+        <div class="col-md-2">
+          <h5>Welcome <% user.name %></h5>
+        </div>
+        <div class="col-md-10">
+          <button class="btn-success" id="login-button">Login</button>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid" id="sidebar">
+      <div class="row justify-content-start">
+        <div class="col-md-3 side-bar p-2">
+          <h5>Your Representatives</h5>
+          <div class="row my-auto mt-3">
+              <div class="w-75 h-auto text-center mx-auto">
+                  <img class="img-fluid img-thumbnail" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Chuck_Schumer_official_photo.jpg/200px-Chuck_Schumer_official_photo.jpg">
+                  <p>Senator Chuck Schumer</p>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-6 mx-auto">
+          <h3 class="text-center px-5 mt-2">Your Favorite Bills</h3>
+          <div class="container-fluid">
+            <div class="w-75 p-3 my-5 border border-primary">
+             
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 mt-5" id="sidebar-two">
+          <h5>Messages from your Representatives:
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
