@@ -12,7 +12,7 @@
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
     />
-    <link href="../public/css/style.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
 
     <title>Congressional Bill Tracker</title>
   </head>
@@ -74,43 +74,7 @@
           <h3 class="text-center mx-auto" id="bill-heading">
             The most Recent Bill Introduced by the U.S. Congress
           </h3>
-          <div class="container-fluid">
-            <div class="w-89 p-3 my-5 border border-primary">
-              <div class="bill-card">
-                <h4 id="bill-id"></h4>
-                <p id="bill-title">Bill Title Text</p>
-                <ul>
-                  <li>
-                    <p id="sponsor">
-                      Sponsor:&nbsp;<a id="sponsor-title"></a
-                      ><a id="sponsor-name"></a><a id="sponsor-party"></a>
-                    </p>
-                  </li>
-                  <li>
-                    <p>Committee:&nbsp;<span id="committee"></span></p>
-                  </li>
-                </ul>
-                <p id="bill-long-title"></p>
-                <div class="bill-status mx-auto w-75 align-content-center">
-                  <button class="status-button inactive-status" id="introduced">
-                    Introduced
-                  </button>
-                  <button class="status-button inactive-status" id="pass-house">
-                    Passed House
-                  </button>
-                  <button
-                    class="status-button inactive-status"
-                    id="pass-senate"
-                  >
-                    Passed Senate
-                  </button>
-                  <button class="status-button inactive-status" id="became-law">
-                    Became Law
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <%- include('partials/bill-card') %>
         </div>
         <div class="col-md-3 mt-3" id="sidebar-two">
           <h5 class="text-center" id="leg-activities">Current Legislative Activities</h5>
