@@ -33,7 +33,7 @@
           <h5><a id="home-button">Home</a></h5>
         </div>
         <div class="col-md-10">
-          <a class="btn btn-success" id="login-button">Login</a>
+          <a class="btn-success" id="login-button">Login</a>
         </div>
       </div>
     </div>
@@ -70,14 +70,19 @@
           />
           <button class="search-submit" id="search-submit">Search</button>
         </div>
-        <div class="col-md-6 mx-auto overflow-auto h-100">
-          <h3 class="text-center mx-auto" id="bill-heading">
-            The most Recent Bill Introduced by the U.S. Congress
+        <div class="col-md-6 mx-auto">
+          <h3 class="text-center mx-auto p-3" id="bill-heading">
+            The twenty most Recent Bill Introduced by the U.S. Congress
           </h3>
-          <div class="container-fluid">
-           
-              <%- include('partials/bill-card', {bill}) %>
-           
+          <div class="container overflow-auto h-25 pb-4 ">
+            <% if (bill.length > 2) { %>
+              <% bill.forEach(bill => { %> 
+            
+              <%- include('partials/bill-card', {bill: bill}) %>
+            <% }) %>
+            <% } else { %>
+              <%- include('partials/bill-card', {bill: bill}) %>
+            <% } %>
 
           </div>        
         </div>

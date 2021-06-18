@@ -163,153 +163,153 @@ function billsByDate(date = currentCongress) {
       }
   }
   console.log(url);
-  fetch(url, {
-    headers: { "X-API-Key": "jHHlm068RlyEusHIX91YA9zmZrvEtDyGplugF6tH" },
-  })
-  // $.get("/api/ext/date-search", {
-  //   reqUrl: url,
-  // })
-    .then(function (response) {
-      if (!response.ok) {
-        throw response.json();
-      }
-      return response.json();
-    })
-    .then(function (response) {
-      var bills = response.results[0].bills;
-      console.log(bills);
-      for (i = 0; i < bills.length; i++) {
-        if (moment(bills[i].latest_major_action_date).isAfter(date)) {
-          //Creates a card for each result
-          var searchCard = $("<div>").attr("class", "bill-card");
-          var cardHead = $("<h4>").append(
-            $("<strong>").text(bills[i].bill_id.toUpperCase())
-          );
-          searchCard.append(cardHead);
-          var cardList = $("<ul>");
-          var liOne = $("<li>")
-            .text("Sponsor: ")
-            .append(
-              $("<span>").attr("id", "sponsor").text(bills[i].sponsor_name)
-            );
-          var liTwo = $("<li>")
-            .text("Comittees: ")
-            .append($("<span>").text(bills[i].committees));
-          var liThree = $("<li>").append($("<p>").text(bills[i].title));
-          cardList.append(liOne, liTwo, liThree);
-          searchCard.append(cardList);
-          var statusBoxes = $("<div>").attr("class", "bill-status");
-          var boxOne = $("<button>")
-            .attr("class", "status-button inactive-status")
-            .text("Introduced");
-          var boxTwo = $("<button>")
-            .attr("class", "status-button inactive-status")
-            .text("Passed House");
-          var boxThree = $("<button>")
-            .attr("class", "status-button inactive-status")
-            .text("Passed Senate");
-          var boxFour = $("<button>")
-            .attr("class", "status-button inactive-status")
-            .text("Became Law");
+//   fetch(url, {
+//     headers: { "X-API-Key": "jHHlm068RlyEusHIX91YA9zmZrvEtDyGplugF6tH" },
+//   })
+//   // $.get("/api/ext/date-search", {
+//   //   reqUrl: url,
+//   // })
+//     .then(function (response) {
+//       if (!response.ok) {
+//         throw response.json();
+//       }
+//       return response.json();
+//     })
+//     .then(function (response) {
+//       var bills = response.results[0].bills;
+//       console.log(bills);
+//       for (i = 0; i < bills.length; i++) {
+//         if (moment(bills[i].latest_major_action_date).isAfter(date)) {
+//           //Creates a card for each result
+//           var searchCard = $("<div>").attr("class", "bill-card");
+//           var cardHead = $("<h4>").append(
+//             $("<strong>").text(bills[i].bill_id.toUpperCase())
+//           );
+//           searchCard.append(cardHead);
+//           var cardList = $("<ul>");
+//           var liOne = $("<li>")
+//             .text("Sponsor: ")
+//             .append(
+//               $("<span>").attr("id", "sponsor").text(bills[i].sponsor_name)
+//             );
+//           var liTwo = $("<li>")
+//             .text("Comittees: ")
+//             .append($("<span>").text(bills[i].committees));
+//           var liThree = $("<li>").append($("<p>").text(bills[i].title));
+//           cardList.append(liOne, liTwo, liThree);
+//           searchCard.append(cardList);
+//           var statusBoxes = $("<div>").attr("class", "bill-status");
+//           var boxOne = $("<button>")
+//             .attr("class", "status-button inactive-status")
+//             .text("Introduced");
+//           var boxTwo = $("<button>")
+//             .attr("class", "status-button inactive-status")
+//             .text("Passed House");
+//           var boxThree = $("<button>")
+//             .attr("class", "status-button inactive-status")
+//             .text("Passed Senate");
+//           var boxFour = $("<button>")
+//             .attr("class", "status-button inactive-status")
+//             .text("Became Law");
 
-          if (
-            bills[i].house_passage === null &&
-            bills[i].senate_passage === null
-          ) {
-            boxOne.addClass("active-status");
-            boxOne.removeClass("inactive-status");
-          }
-          if (
-            bills[i].house_passage !== null &&
-            bills[i].senate_passage === null
-          ) {
-            boxTwo.addClass("active-status");
-            boxTwo.removeClass("inactive-status");
-          }
-          if (bills[i].senate_passage !== null) {
-            boxThree.addClass("active-status");
-            boxThree.removeClass("inactive-status");
-          }
-          if (bills[i].enacted !== null) {
-            boxFour.addClass("active-status");
-            boxFour.removeClass("inactive-status");
-          }
+//           if (
+//             bills[i].house_passage === null &&
+//             bills[i].senate_passage === null
+//           ) {
+//             boxOne.addClass("active-status");
+//             boxOne.removeClass("inactive-status");
+//           }
+//           if (
+//             bills[i].house_passage !== null &&
+//             bills[i].senate_passage === null
+//           ) {
+//             boxTwo.addClass("active-status");
+//             boxTwo.removeClass("inactive-status");
+//           }
+//           if (bills[i].senate_passage !== null) {
+//             boxThree.addClass("active-status");
+//             boxThree.removeClass("inactive-status");
+//           }
+//           if (bills[i].enacted !== null) {
+//             boxFour.addClass("active-status");
+//             boxFour.removeClass("inactive-status");
+//           }
 
-          statusBoxes.append(boxOne, boxTwo, boxThree, boxFour);
-          searchCard.append(statusBoxes);
-          dateSearchResultsEl.append(searchCard);
-        }
-      }
-    });
-}
+//           statusBoxes.append(boxOne, boxTwo, boxThree, boxFour);
+//           searchCard.append(statusBoxes);
+//           dateSearchResultsEl.append(searchCard);
+//         }
+//       }
+//     });
+// }
 
 // dateSearchEl.hide();
-searchBtn.on("click", function (e) {
-  offset = 0;
-  console.log(e);
-  billsByDate();
-});
+// searchBtn.on("click", function (e) {
+//   offset = 0;
+//   console.log(e);
+//   billsByDate();
+// });
 
-nextBtn.on("click", function () {
-  offset += 20;
-  billsByDate();
-});
+// nextBtn.on("click", function () {
+//   offset += 20;
+//   billsByDate();
+// });
 
-previousBtn.on("click", function () {
-  if (offset >= 20) {
-    offset -= 20;
-    billsByDate();
-  }
-});
+// previousBtn.on("click", function () {
+//   if (offset >= 20) {
+//     offset -= 20;
+//     billsByDate();
+//   }
+// });
 
 //Default get latest Bill
 
-function getLatestBill() {
-  var url = "https://api.propublica.org/congress/v1/bills/search.json";
-  fetch(url, {
-    headers: { "X-API-Key": "jHHlm068RlyEusHIX91YA9zmZrvEtDyGplugF6tH" },
-  })
-    .then(function (response) {
-      if (!response.ok) {
-        throw response.json();
-      }
-      return response.json();
-    })
-    .then(function (locRes) {
-      billOutput = JSON.stringify(locRes);
-      billData = JSON.parse(billOutput);
-      console.log(billData);
-      billNewest = billData.results[0].bills[0];
-      console.log(billNewest);
+// function getLatestBill() {
+//   var url = "https://api.propublica.org/congress/v1/bills/search.json";
+//   fetch(url, {
+//     headers: { "X-API-Key": "jHHlm068RlyEusHIX91YA9zmZrvEtDyGplugF6tH" },
+//   })
+//     .then(function (response) {
+//       if (!response.ok) {
+//         throw response.json();
+//       }
+//       return response.json();
+//     })
+//     .then(function (locRes) {
+//       billOutput = JSON.stringify(locRes);
+//       billData = JSON.parse(billOutput);
+//       console.log(billData);
+//       billNewest = billData.results[0].bills[0];
+//       console.log(billNewest);
 
-      billIdEl.text(billNewest.bill_id.toUpperCase());
-      billSponNameEl.text(billNewest.sponsor_name);
-      billSponTitleEl.text(billNewest.sponsor_title);
-      billSponPartyEl.text(
-        ` (${billNewest.sponsor_party} - ${billNewest.sponsor_state})`
-      );
+//       billIdEl.text(billNewest.bill_id.toUpperCase());
+//       billSponNameEl.text(billNewest.sponsor_name);
+//       billSponTitleEl.text(billNewest.sponsor_title);
+//       billSponPartyEl.text(
+//         ` (${billNewest.sponsor_party} - ${billNewest.sponsor_state})`
+//       );
 
-      //Bill Card population
-      billCommEl.text(billNewest.committees);
-      billTitleEl.text(billNewest.short_title);
-      billLongTitle.text(billNewest.title);
+//       //Bill Card population
+//       billCommEl.text(billNewest.committees);
+//       billTitleEl.text(billNewest.short_title);
+//       billLongTitle.text(billNewest.title);
 
-      //Modal Population
-      modalSponName.text(
-        `${billNewest.sponsor_title} ${billNewest.sponsor_name}`
-      );
-      modalSponParty.text(
-        `(${billNewest.sponsor_party} - ${billNewest.sponsor_state})`
-      );
-      modalSponCap.text(
-        `${billNewest.sponsor_title} ${billNewest.sponsor_name}`
-      );
-      //Status Bar Changes
-      introducedDateEl.text(`Introduced: ${billNewest.introduced_date}`);
+//       //Modal Population
+//       modalSponName.text(
+//         `${billNewest.sponsor_title} ${billNewest.sponsor_name}`
+//       );
+//       modalSponParty.text(
+//         `(${billNewest.sponsor_party} - ${billNewest.sponsor_state})`
+//       );
+//       modalSponCap.text(
+//         `${billNewest.sponsor_title} ${billNewest.sponsor_name}`
+//       );
+//       //Status Bar Changes
+//       introducedDateEl.text(`Introduced: ${billNewest.introduced_date}`);
 
-      renderBillStatus(billNewest);
-    });
-}
+//       renderBillStatus(billNewest);
+//     });
+// }
 // When the user clicks on the button, open the modal
 // When the user clicks on <span> (x), close the modal
 
@@ -322,7 +322,7 @@ $(".close").on("click", function (e) {
 billSponEl.click(function (e) {
   console.log(e);
   var modal = document.getElementById("myModal");
-  modal.style.display = "block";
+  modal.display = "block";
   var wikiEndpointExtract =
     "https://en.wikipedia.org/api/rest_v1/page/summary/";
   var congressExtract;
@@ -351,5 +351,5 @@ billSponEl.click(function (e) {
       });
   }
   getCongressExtract();
-});
-getLatestBill();
+});}
+// getLatestBill();}
