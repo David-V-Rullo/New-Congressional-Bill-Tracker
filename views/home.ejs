@@ -30,10 +30,10 @@
     <div class="container-fluid" id="navbar">
       <div class="row p-2">
         <div class="col-md-2">
-          <h5>Home</h5>
+          <h5><a id="home-button">Home</a></h5>
         </div>
         <div class="col-md-10">
-          <button class="btn-success" id="login-button">Login</button>
+          <a class="btn-success" id="login-button">Login</a>
         </div>
       </div>
     </div>
@@ -74,8 +74,40 @@
           <h3 class="text-center mx-auto" id="bill-heading">
             The most Recent Bill Introduced by the U.S. Congress
           </h3>
-          <%- include('partials/bill-card') %>
-        </div>
+          <div class="container-fluid">
+            <div class="w-89 p-3 my-5 border border-primary">
+              <div class="bill-card p-2">
+                <h4 id="bill-id"> <%= bill.bill_id.toUpperCase() %> </h4>
+                <h5 id="bill-title"> <%= bill.title %> </h5>
+                <hr>
+                <p id="sponsor">
+                      Sponsor:&nbsp;<a id="sponsor-title"> <%= bill.sponsor_title %> </a
+                      ><a id="sponsor-name"> <%= bill.sponsor %> </a>
+                    </p>
+                    <p>Committee:&nbsp;<span id="committee"> <%= bill.committee %> </span></p>
+                <p id="bill-long-title"> <%= bill.summary %> </p>
+                <div class="bill-status mx-auto w-75 align-content-center">
+                 
+                  <button class="status-button active-status" id="introduced">
+                    Introduced
+                  </button>
+                  
+                  <button class="status-button inactive-status" id="pass-house">
+                    Passed House
+                  </button>
+                  <button
+                    class="status-button inactive-status"
+                    id="pass-senate"
+                  >
+                    Passed Senate
+                  </button>
+                  <button class="status-button inactive-status" id="became-law">
+                    Became Law
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>        </div>
         <div class="col-md-3 mt-3" id="sidebar-two">
           <h5 class="text-center" id="leg-activities">Current Legislative Activities</h5>
           <div class="containter">
@@ -108,9 +140,18 @@
       </div>
     </div>
     <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+    <script src="/js/function.js"></script>
+    <script src="/js/bill-status.js"></script>
+    
   </body>
 </html>

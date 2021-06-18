@@ -2,27 +2,43 @@ const router = require('express').Router();
 const path = require("path");
 const isAuthenticated = require("../../config/middleware/isAuthenticated");
 const axios = require('axios');
+const passport = require('passport')
+// const defaultSearch = require("../../config/middleware/defaultSearch")
 
 // GET all galleries for homepage
 router.get("/", async (req, res) => {
   console.log("GET /");
     try {
-      // router.get("/probill", async (req, res) => {
-      //   console.log("GET /api/ext/probill");
-      //   try {
             var key = "jHHlm068RlyEusHIX91YA9zmZrvEtDyGplugF6tH";
             const apiData = await axios.get("https://api.propublica.org/congress/v1/bills/search.json", {headers: { "X-API-Key": key }});
-            // const apiData = await axios.get(
-            //     "url": "https://api.propublica.org/congress/v1/bills/search.json",
-            //        "key": "jHHlm068RlyEusHIX91YA9zmZrvEtDyGplugF6tH"
-            console.log(apiData.data);
-            // res.status(200).json(apiData.data);
-            res.render('home', {apiData})
+            console.log(apiData.data.results);
+            const bill = {
+              title: apiData.data.results[0].bills[0].title,
+              bill_id: apiData.data.results[0].bills[0].bill_id,
+              sponsor: `${apiData.data.results[0].bills[0].sponsor_title}. ${apiData.data.results[0].bills[0].sponsor_name} ${apiData.data.results[0].bills[0].sponsor_party}-${apiData.data.results[0].bills[0].sponsor_state}`,
+              summary: apiData.data.results[0].bills[0].summary,
+              committee: apiData.data.results[0].bills[0].committees,
+            }
+            res.render('home', {bill})
         } catch (err) {
             console.error(err);
             res.status(401).json(err);
         }
     });
+
+    router.get("/default", async (req, res) => {
+      console.log("GET /");
+        try {
+                var key = "jHHlm068RlyEusHIX91YA9zmZrvEtDyGplugF6tH";
+                const apiData = await axios.get("https://api.propublica.org/congress/v1/bills/search.json", {headers: { "X-API-Key": key }});
+                console.log(apiData.data.results);
+                const bill = apiData.data.results[0].bills
+                res.render('home', {bill})
+            } catch (err) {
+                console.error(err);
+                res.status(401).json(err);
+            }
+        });
     
 router.get("/login", (req, res) => {
   console.log("GET /login");
@@ -36,6 +52,7 @@ router.get("/login", (req, res) => {
 // Here we've add our isAuthenticated middleware to this route.
 // If a user who is not logged in tries to access this route they will be redirected to the signup page
 router.get("/user", (req, res) => {
+  //call getUser
   console.log("GET /members");
 res.render('user', {name:"dave", hobby:"farting"})
 });
