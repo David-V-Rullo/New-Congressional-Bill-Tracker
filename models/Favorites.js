@@ -19,9 +19,13 @@ Favorites.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    bill_status: {
+    introduced_date: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
+    },
+    introduced_date: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
 
     //foreign key

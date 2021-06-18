@@ -2,6 +2,7 @@ const router = require("express").Router();
 const passport = require("../../config/passport");
 const axios = require('axios');
 
+
 //Required body for GET /propublica
 // {
 // 	"url": "https://api.propublica.org/congress/v1/bills/search.json?sort=date&dir=desc",
@@ -67,7 +68,6 @@ router.get("/probill", async (req, res) => {
     }
 });
 
-
 router.get("/zip", async (req, res) => {
     console.log("GET /api/ext/zip");
     try {
@@ -88,3 +88,8 @@ router.get("/zip", async (req, res) => {
 
 
 module.exports = router;
+
+
+//req.params.id = send one of the pieces of the object in order to use it later
+//make sure to attach id to button so that they're tied together
+//attach bill's id to favorite button - grab with e.target.id - inside onclick

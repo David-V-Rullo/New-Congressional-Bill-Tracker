@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS congress_db;
-CREATE DATABASE congress_db;
+DROP DATABASE IF EXISTS passport_demo;
+CREATE DATABASE passport_demo;
