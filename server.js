@@ -3,7 +3,7 @@
 const express = require("express");
 const session = require("express-session");
 const routes = require("./controllers");
-// const sequelize = require("./config/connection");
+const sequelize = require("./config/connection");
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
 // Setting up port and requiring models for syncing
@@ -27,6 +27,6 @@ app.use(routes);
 app.set("view engine", "ejs");
 
 // Syncing our database and logging a message to the user upon success
-// sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: false }).then(() => {
 app.listen(PORT, () => {
-  console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);});
+  console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);});})
