@@ -163,6 +163,10 @@ body {
     color: antiquewhite;
     font-size: large;
   }
+  .live-session a {
+    text-decoration: none;
+    color: antiquewhite
+  }
   #leg-activities{
     font-size: 38px;
     color: maroon;

@@ -12,13 +12,7 @@ router.get("/", async (req, res) => {
             var key = "jHHlm068RlyEusHIX91YA9zmZrvEtDyGplugF6tH";
             const apiData = await axios.get("https://api.propublica.org/congress/v1/bills/search.json", {headers: { "X-API-Key": key }});
             console.log(apiData.data.results);
-            const bill = {
-              title: apiData.data.results[0].bills[0].title,
-              bill_id: apiData.data.results[0].bills[0].bill_id,
-              sponsor: `${apiData.data.results[0].bills[0].sponsor_title}. ${apiData.data.results[0].bills[0].sponsor_name} ${apiData.data.results[0].bills[0].sponsor_party}-${apiData.data.results[0].bills[0].sponsor_state}`,
-              summary: apiData.data.results[0].bills[0].summary,
-              committee: apiData.data.results[0].bills[0].committees,
-            }
+            const bill = apiData.data.results[0].bills[0];
             res.render('home', {bill})
         } catch (err) {
             console.error(err);
@@ -33,7 +27,7 @@ router.get("/", async (req, res) => {
                 const apiData = await axios.get("https://api.propublica.org/congress/v1/bills/search.json", {headers: { "X-API-Key": key }});
                 console.log(apiData.data.results);
                 const bill = apiData.data.results[0].bills
-                res.render('home', {bill})
+                res.render('default', {bill})
             } catch (err) {
                 console.error(err);
                 res.status(401).json(err);
