@@ -48,6 +48,11 @@ router.get("/login", (req, res) => {
 router.get("/user", (req, res) => {
   //call getUser
   console.log("GET /members");
+  // Twitter api key VTLQAwT9CbNj3eBlk0dH3d9bI
+  // Secret Key dyBCxOwW99rxNRHYZei7cyrZIbHMSs1ETU1ospVXNVOwSTBwrl
+  // Bearer token AAAAAAAAAAAAAAAAAAAAHhDQwEAAAAA2mZHTkCZpWpl1Tn7XFAfecvq7Bs%3Dh3zKrRmiPUHDt2VynKgSiAxhcJ4yGgCvM85aNhgp4FkTMWuxer
+
+
 res.render('user', {name:"dave", hobby:"farting"})
 });
 
