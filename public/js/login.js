@@ -30,7 +30,7 @@ $(document).ready(() => {
     })
       .then(data => {
         console.log("loginUser", data);
-        window.location.replace("/members");
+        window.location.replace("/user");
         // If there's an error, log the error
       })
       .catch(handleLoginErr);

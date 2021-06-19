@@ -38,7 +38,7 @@ router.get("/login", (req, res) => {
   console.log("GET /login");
   // If the user already has an account send them to the members page
   if (req.user) {
-    res.redirect("/members");
+    res.redirect("/user");
   }
   res.render('login')
 });
@@ -47,7 +47,7 @@ router.get("/login", (req, res) => {
 // If a user who is not logged in tries to access this route they will be redirected to the signup page
 router.get("/user", (req, res) => {
   //call getUser
-  console.log("GET /members");
+  console.log("GET /user");
 res.render('user', {name:"dave", hobby:"farting"})
 });
 
