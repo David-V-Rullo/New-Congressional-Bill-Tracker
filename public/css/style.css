@@ -6,7 +6,7 @@ body {
     color: white;
     /* padding-top: 30px;
     padding-left: 10px; */
-    height: 800px;
+    
   }
   /* .bill-card {
     padding: 10px;
@@ -179,3 +179,11 @@ body {
     font-size: 24px;
     position: relative;
   }
+
+  #content-box {
+    background-color: lightgray
+  }
+footer {
+  width: 100%;
+  background-color: navy;
+}

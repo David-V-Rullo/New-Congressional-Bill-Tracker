@@ -35,15 +35,15 @@
         <div class="col-md-10"></div>
       </div>
     </div>
-    <div class="container-fluid" id="sidebar">
+    <div class="container-fluid h-100 position-absolute" id="sidebar">
       <div class="row justify-content-start">
-        <div class="col-md-3 side-bar">
+        <div class="col-md-2 side-bar">
           <h5>Your Representatives</h5>
           <%- include('partials/rep-card', {userData}) %>
         </div>
-        <div class="col-md-6 mx-auto">
+        <div class="col-md-7 mx-auto h-100 position-relative">
           <h3 class="text-center px-5 mt-2">Your Favorite Bills</h3>
-          <div class="container overflow-auto h-50 pb-4"> 
+          <div class="container h-50 pb-4"> 
             <% if (userData.favoriteBills.length > 1) { %> <%
             userData.favoriteBills.forEach(favoriteBills => { %> <%-
             include('partials/favorite-bills', {favoriteBills}) %> <% }) %> <% }
@@ -56,8 +56,9 @@
           <%- include('partials/links-sidebar') %>
         </div>
       </div>
-    </div>
+      <footer>Here is a footer</footer>
 
+    </div>
     <script
       src="https://code.jquery.com/jquery-3.6.0.js"
       integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
