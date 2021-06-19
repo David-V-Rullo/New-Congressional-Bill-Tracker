@@ -181,7 +181,8 @@ body {
   }
 
   #content-box {
-    background-color: lightgray
+    background-color: lightgray;
+    box-shadow:2px, 1px black;
   }
 footer {
   width: 100%;
