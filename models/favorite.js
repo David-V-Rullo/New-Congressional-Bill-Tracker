@@ -1,7 +1,8 @@
 const { Model, DataTypes } = require("sequelize");
+const bcrypt = require('bcrypt');
 const sequelize = require("../config/connection");
 
-class Favorite extends Model {};
+class Favorite extends Model { };
 
 Favorite.init(
   {
@@ -11,17 +12,29 @@ Favorite.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    title: {
+    bill_id: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [1],
-      },
     },
-    body: {
-      type: DataTypes.TEXT,
+    sponsor_name: {
+      type: DataTypes.STRING,
       allowNull: false,
-      len: [1],
+    },
+    short_title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    introduced_date: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    house_passage: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    senate_passage: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     user_id: {
       type: DataTypes.INTEGER,

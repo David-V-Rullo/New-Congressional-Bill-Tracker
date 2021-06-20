@@ -23,6 +23,7 @@ router.post("/signup", async (req, res) => {
     const dbUserData = await User.create({
       name: req.body.name,
       email: req.body.email,
+      zip: req.body.zip,
       password: req.body.password,
     });
 
@@ -46,6 +47,7 @@ router.get("/user_data", (req, res) => {
     res.json({
       name: req.user.name,
       email: req.user.email,
+      zip: req.user.zip,
       id: req.user.id
     });
   }
@@ -60,5 +62,6 @@ router.get("/logout", (req, res) => {
     res.status(404).end();
   }
 });
+
 
 module.exports = router;
