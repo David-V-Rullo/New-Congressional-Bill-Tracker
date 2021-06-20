@@ -84,7 +84,40 @@ router.get("/zip", async (req, res) => {
 
 // zip call for front end in case we need it
 
-// async function showCongress() {
+
+// $(document).ready(() => {
+
+//   userZip = $.get("/api/user/user_data").then(data => {
+ 
+    
+      
+//       // console.log(JSON.stringify(data.zip))  
+//       userZip = JSON.stringify(data.zip);
+//       // console.log(data.zip)
+//       // console.log(typeof(data.zip))
+    
+//       var congUrl = userZip
+      
+//       // console.log("https://whoismyrepresentative.com/getall_mems.php?zip=" + userZip + "&output=json");
+//       saveZip = ("https://whoismyrepresentative.com/getall_mems.php?zip=" + userZip + "&output=json");
+
+      
+//   });
+// });
+
+
+
+
+
+
+
+
+
+//break
+// congZip;
+
+
+// async function showZip() {
 //   const yourZip = await $.get("/api/user/user_data")
 //   console.log (yourZip.zip + "yourZip.zip")
 
@@ -92,16 +125,31 @@ router.get("/zip", async (req, res) => {
 //   console.log(useZip +"USEZIP")
   
 
-//   congZip = ("https://whoismyrepresentative.com/getall_mems.php?zip=" + yourZip.zip + "&output=json");
+//   congZip = ("https://cors-anywhere.herokuapp.com/https://whoismyrepresentative.com/getall_mems.php?zip=" + yourZip.zip + "&output=json");
 //   console.log(congZip)
-//   fetch("/zip", {
-//     method: "GET",
-//     body: JSON.stringify({
-//     url: congZip  
-//     })
-    
-//   })
+  
+//   showCongress()
+  
 // }
+
+// async function showCongress() {
+//   const yourCong = await fetch(congZip)
+
+//   console.log (yourCong + "yourCong")
+  
+//   useCong = JSON.stringify(yourCong)
+ 
+
+  
+  
+  
+}
+
+
+
+
+
+
 
 
 
@@ -130,6 +178,7 @@ router.get("/zip", async (req, res) => {
 //     res.status(401).json(err);
 //   }
 // });
+
 
 module.exports = router;
 
