@@ -51,4 +51,11 @@ router.get("/user", (req, res) => {
 res.render('user', {name:"dave", hobby:"farting"})
 });
 
+
+
+
+
+
+
+
 module.exports = router;
