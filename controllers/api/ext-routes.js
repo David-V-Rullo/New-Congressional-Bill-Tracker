@@ -82,6 +82,29 @@ router.get("/zip", async (req, res) => {
 
 
 
+// zip call for front end in case we need it
+
+// async function showCongress() {
+//   const yourZip = await $.get("/api/user/user_data")
+//   console.log (yourZip.zip + "yourZip.zip")
+
+//   useZip = JSON.stringify(yourZip.zip)
+//   console.log(useZip +"USEZIP")
+  
+
+//   congZip = ("https://whoismyrepresentative.com/getall_mems.php?zip=" + yourZip.zip + "&output=json");
+//   console.log(congZip)
+//   fetch("/zip", {
+//     method: "GET",
+//     body: JSON.stringify({
+//     url: congZip  
+//     })
+    
+//   })
+// }
+
+
+
 
 
 
