@@ -66,7 +66,7 @@ router.get("/zip", async (req, res) => {
 
   try {
     //get user data in order to make the get request
-    const userZip = await $.get("/api/user/user_data")
+    const userZip = await get("/api/user/user_data")
     returnZip = JSON.stringify(userZip.zip)
     const apiData = await axios.get("https://whoismyrepresentative.com/getall_mems.php?zip=" + returnZip + "&output=json");
    
