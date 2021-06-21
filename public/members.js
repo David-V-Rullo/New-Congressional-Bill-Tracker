@@ -20,6 +20,8 @@ var useZip;
 var yourZip;
 var userId;
 
+// Loads document and then grabs user data from the database - to get the zip and concatenate out the API with the correct zipcode
+
 $(document).ready(() => {
 
     userZip = $.get("/api/user/user_data").then(data => {
@@ -35,14 +37,14 @@ $(document).ready(() => {
         saveZip = ("https://whoismyrepresentative.com/getall_mems.php?zip=" + yourZip + "&output=json");
 
 
-
+        showCongress()
 
     });
 });
 
 
 
-
+//This has to be a post function because we need the body to contain the URL
 
 async function showCongress() {
     const rawResponse = await fetch('/api/ext/zip', {

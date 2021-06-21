@@ -61,15 +61,17 @@ router.get("/probill", async (req, res) => {
 });
 
 
-router.get("/zip", async (req, res) => {
+//has to be a post function
+router.post("/zip", async (req, res) => {
+  console.log(req.body)
   console.log("GET /api/ext/zip");
 
   try {
-    //get user data in order to make the get request
-    const userZip = await get("/api/user/user_data")
-    returnZip = JSON.stringify(userZip.zip)
-    const apiData = await axios.get("https://whoismyrepresentative.com/getall_mems.php?zip=" + returnZip + "&output=json");
-   
+      console.log("THE URL: " + req.body.url);
+      const apiData = await axios.get(req.body.url);
+      // const apiData = await axios.get(
+      //     "url": "https://whoismyrepresentative.com/getall_mems.php?zip=31023&output=json",
+      
   
       console.log(apiData.data);
       res.status(200).json(apiData.data);
