@@ -71,30 +71,31 @@ async function showCongress() {
 
 
 
-const favoriteFormHandler = async function (event) {
-    event.preventDefault();
+// const favoriteFormHandler = async function (event) {
+//     event.preventDefault();
 
-    const postId = document.querySelector('input[name="post-id"]').value;
-    const body = document.querySelector('textarea[name="comment-body"]').value;
+//     const postId = document.querySelector('input[name="post-id"]').value;
+//     const body = document.querySelector('textarea[name="comment-body"]').value;
 
-    if (body) {
-        await fetch('/api/comment', {
-            method: 'POST',
-            body: JSON.stringify({
-                postId,
-                body
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
+//     if (body) {
+//         await fetch('/api/comment', {
+//             method: 'POST',
+//             body: JSON.stringify({
+//                 postId,
+//                 body
+//             }),
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             }
+//         });
 
-        document.location.reload();
-    }
-};
+//         document.location.reload();
+//     }
+// };
 
 
-
+//possible on click event for adding favorite?
+//need event listener on buttons - could save text element.value to replace my syntax
 async function addFavorite() {
 
 
