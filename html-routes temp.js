@@ -43,18 +43,13 @@ router.get("/login", (req, res) => {
   res.render('login')
 });
 
-router.get("/signup", (req, res) => {
-  console.log("GET /signup");
-  // If the user already has an account send them to the members page
-  if (req.user) {
-    res.redirect("/user");
-  }
+router.get('/signup', (req, res) => {
   res.render('signup')
-});
+})
 
 // Here we've add our isAuthenticated middleware to this route.
 // If a user who is not logged in tries to access this route they will be redirected to the signup page
-router.get("/user",  (req, res) => {
+router.get("/user", isAuthenticated, (req, res) => {
   //call getUser
   const userData = {
     name: 'David',
@@ -182,8 +177,17 @@ router.get("/user",  (req, res) => {
       }
     }
   }
-  console.log("GET /user");
+  console.log("GET /members");
+  // Twitter api key VTLQAwT9CbNj3eBlk0dH3d9bI
+  // Secret Key dyBCxOwW99rxNRHYZei7cyrZIbHMSs1ETU1ospVXNVOwSTBwrl
+  // Bearer token AAAAAAAAAAAAAAAAAAAAHhDQwEAAAAA2mZHTkCZpWpl1Tn7XFAfecvq7Bs%3Dh3zKrRmiPUHDt2VynKgSiAxhcJ4yGgCvM85aNhgp4FkTMWuxer
+
+
 res.render('user', {userData})
 });
 
 module.exports = router;
+
+
+// <!-- This is where you will pull in User data obj that has their reps -->
+//             <!-- <%- include('partials/rep-card', {userData}) %> -->
