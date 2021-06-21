@@ -36,31 +36,32 @@
         <div class="col-md-10">
           <a class="btn btn-success" id="logout-button">Logout</a>
         </div>
+        <div class="col-md-10"></div>
       </div>
     </div>
-    <div class="container-fluid" id="sidebar">
+    <div class="container-fluid h-100 position-absolute" id="sidebar">
       <div class="row justify-content-start">
-        <div class="col-md-3 side-bar p-2">
+        <div class="col-md-2 side-bar">
           <h5>Your Representatives</h5>
-          <div class="row my-auto mt-3">
-              <div class="w-75 h-auto text-center mx-auto">
-                  <img class="img-fluid img-thumbnail" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Chuck_Schumer_official_photo.jpg/200px-Chuck_Schumer_official_photo.jpg">
-                  <p>Senator Chuck Schumer</p>
-              </div>
-          </div>
+          <%- include('partials/rep-card', {userData}) %>
         </div>
-        <div class="col-md-6 mx-auto">
+        <div class="col-md-7 mx-auto h-100 position-relative">
           <h3 class="text-center px-5 mt-2">Your Favorite Bills</h3>
-          <div class="container-fluid">
-            <div class="w-75 p-3 my-5 border border-primary">
-             
-            </div>
-          </div>
+          <div class="container h-50 pb-4"> 
+            <% if (userData.favoriteBills.length > 1) { %> <%
+            userData.favoriteBills.forEach(favoriteBills => { %> <%-
+            include('partials/favorite-bills', {favoriteBills}) %> <% }) %> <% }
+            else { %>
+            <h5>You have No Favorite Bills</h5>
+            <% } %>
+          </div> 
         </div>
         <div class="col-md-2 mt-5" id="sidebar-two">
-          <h5>Messages from your Representatives:
+          <%- include('partials/links-sidebar') %>
         </div>
       </div>
+      <footer>Here is a footer</footer>
+
     </div>
     <script
     src="https://code.jquery.com/jquery-3.6.0.js"
@@ -72,6 +73,8 @@
       integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
     <script src="/js/function.js"></script>
+    <script src="/js/bill-status.js"></script>
   </body>
 </html>
