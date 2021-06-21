@@ -56,15 +56,15 @@ async function showCongress() {
     const content = await rawResponse.json();
     console.log(rawResponse)
     firstCongName = content.results[0].name
-    firstCongName = content.results[0].party
+    firstCongParty = content.results[0].party
     console.log(content.results[0].party)
-    firstCongName = content.results[0].link
+    firstCongLink = content.results[0].link
     secondCongName = content.results[0].name
-    secondCongName = content.results[0].party
-    secondCongName = content.results[0].link
+    secondCongParty = content.results[0].party
+    secondCongLink = content.results[0].link
     thirdCongName = content.results[0].name
-    thirdCongName = content.results[0].party
-    thirdCongName = content.results[0].link
+    thirdCongParty = content.results[0].party
+    thirdCongLink = content.results[0].link
 
     console.log(content);
 };
