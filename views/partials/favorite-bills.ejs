@@ -1,0 +1,33 @@
+<div class="w-75 p-3 my-5 mx-auto border border-primary" id="content-box">
+    <div class="row justify-content-end"><button class="col-1 btn btn-outline-warning btn-sm" id="favorite-button ">&#10025;</button></div>
+    <div class="bill-card p-2">
+      <h4 id="bill-id"> <%= favoriteBills.bill_id.toUpperCase() %> </h4>
+      <h5 id="bill-title"> <%= favoriteBills.bill_title %> </h5>
+      <hr>
+      <p id="sponsor">
+            Sponsor:&nbsp;<a id="sponsor-title"> <%= favoriteBills.sponsor_title %> </a
+            ><a id="sponsor-name"><%= favoriteBills.sponsor_name %> <%= favoriteBills.sponsor_party %>  - <%= favoriteBills.sponsor_state %> </a>
+          </p>
+          <p>Committee:&nbsp;<span id="committee"> <%= favoriteBills.committees %> </span></p>
+      <p id="bill-long-title"> <%= favoriteBills.title %> </p>
+      <div class="bill-status mx-auto w-75 align-content-center">
+       
+        <button class="status-button active-status" id="introduced">
+          Introduced
+        </button>
+        
+        <button class="status-button inactive-status" id="pass-house">
+          Passed House
+        </button>
+        <button
+          class="status-button inactive-status"
+          id="pass-senate"
+        >
+          Passed Senate
+        </button>
+        <button class="status-button inactive-status" id="became-law">
+          Became Law
+        </button>
+      </div>
+    </div>
+  </div>
