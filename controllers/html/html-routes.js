@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
     try {
             var key = "jHHlm068RlyEusHIX91YA9zmZrvEtDyGplugF6tH";
             const apiData = await axios.get("https://api.propublica.org/congress/v1/bills/search.json", {headers: { "X-API-Key": key }});
-            console.log(apiData.data.results);
+            //console.log(apiData.data.results);
             const bill = apiData.data.results[0].bills[0];
             res.render('home', {bill})
         } catch (err) {
@@ -21,11 +21,11 @@ router.get("/", async (req, res) => {
     });
 
     router.get("/default", async (req, res) => {
-      console.log("GET /");
+      console.log("GET /default");
         try {
                 var key = "jHHlm068RlyEusHIX91YA9zmZrvEtDyGplugF6tH";
                 const apiData = await axios.get("https://api.propublica.org/congress/v1/bills/search.json", {headers: { "X-API-Key": key }});
-                console.log(apiData.data.results);
+                //console.log(apiData.data.results);
                 const bill = apiData.data.results[0].bills
                 res.render('default', {bill})
             } catch (err) {

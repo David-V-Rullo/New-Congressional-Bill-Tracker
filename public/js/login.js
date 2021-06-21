@@ -23,7 +23,7 @@ $(document).ready(() => {
     passwordInput.val("");
   });
 
-  // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
+  // loginUser does a post to our "api/login" route and if successful, redirects us the the user page
   function loginUser(email, password) {
     $.post("/api/user/login", {
       email: email,
