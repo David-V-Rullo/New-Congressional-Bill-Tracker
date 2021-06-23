@@ -98,6 +98,10 @@ async function showCongress() {
   $("#rep-three-party").text(thirdCongParty);
   $("#rep-three-link").text(thirdCongLink);
   
+  $("#rep-one-link").css("fontSize", 12);
+  $("#rep-two-link").css("fontSize", 12);
+  $("#rep-three-link").css("fontSize", 12);
+  
 
 };
 
