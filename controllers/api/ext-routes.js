@@ -60,24 +60,22 @@ router.get("/probill", async (req, res) => {
   }
 });
 
-router.get("/zip", async (req, res) => {
+router.post("/zip", async (req, res) => {
+  console.log(req.body)
   console.log("GET /api/ext/zip");
-  try {
-    var key = req.body.key;
-    console.log(req.body.key);
-    console.log("THE URL: " + req.body.url);
-    const apiData = await axios.get(req.body.url, {
-      headers: { "X-API-Key": key },
-    });
-    // const apiData = await axios.get(
-    //     "url": "https://api.propublica.org/congress/v1/bills/search.json",
-    //        "key": "jHHlm068RlyEusHIX91YA9zmZrvEtDyGplugF6tH"
 
-    console.log(apiData.data);
-    res.status(200).json(apiData.data);
+  try {
+      console.log("THE URL: " + req.body.url);
+      const apiData = await axios.get(req.body.url);
+      // const apiData = await axios.get(
+      //     "url": "https://whoismyrepresentative.com/getall_mems.php?zip=31023&output=json",
+      
+  
+      console.log(apiData.data);
+      res.status(200).json(apiData.data);
   } catch (err) {
-    console.error(err);
-    res.status(401).json(err);
+      console.error(err);
+      res.status(401).json(err);
   }
 });
 

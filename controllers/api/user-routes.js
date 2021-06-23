@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const {User} = require("../../models");
 const passport = require("../../config/passport");
+const {Favorite} = require("../../models");
+
 
 // Login
 router.post("/login", passport.authenticate("local"), async (req, res) => {
@@ -52,6 +54,8 @@ router.get("/user_data", (req, res) => {
     });
   }
 });
+
+
 // Logout
 router.get("/logout", (req, res) => {
   console.log("GET - /api/user/logout");
@@ -60,6 +64,26 @@ router.get("/logout", (req, res) => {
     res.redirect("/");
   } else {
     res.status(404).end();
+  }
+});
+
+
+router.get('/:id', async (req, res) => {
+  console.log("GET /api/user/:id");
+  try {
+    const userData = await Favorite.findByPk(req.params.id, {
+      // JOIN with travellers, using the Trip through table
+      
+    });
+
+    if (!userData) {
+      res.status(404).json({ message: 'No favorited items!' });
+      return;
+    }
+
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
