@@ -186,4 +186,11 @@ router.get("/user", isAuthenticated,  (req, res) => {
 res.render('user', {userData})
 });
 
+
+
+
+
+
+
+
 module.exports = router;
