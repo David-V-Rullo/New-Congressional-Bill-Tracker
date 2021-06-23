@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const {User} = require("../../models");
 const passport = require("../../config/passport");
+const {Favorite} = require("../../models");
 
 // Login
 router.post("/login", passport.authenticate("local"), async (req, res) => {
@@ -52,6 +53,8 @@ router.get("/user_data", (req, res) => {
     });
   }
 });
+
+
 // Logout
 router.get("/logout", (req, res) => {
   console.log("GET - /api/user/logout");
@@ -60,6 +63,52 @@ router.get("/logout", (req, res) => {
     res.redirect("/");
   } else {
     res.status(404).end();
+  }
+});
+
+//FAVORITES
+
+// CREATE new favorite
+router.post("/add_favorite", async (req, res) => {
+  console.log("POST /api/user/add_favorite");
+  try {
+    const dbUserData = await Favorite.create({
+      bill_id: req.body.bill_id,
+      short_title: req.body.short_title,
+      introduced_date: req.body.introduced_date,
+      house_passage: req.body.house_passage,
+      senate_passage: req.body.senate_passage,
+      user_id: req.body.user_id,
+    });
+
+    res.redirect(307, "/api/user/login");
+    // Or redirect to login web page
+    // res.redirect("/login");
+  } catch (err) {
+    console.log(err.errors[0]);
+    res.status(500).json({ messge: err.errors[0]["message"]});
+  }
+});
+
+
+//get user favorites
+
+router.get('/:id', async (req, res) => {
+  console.log("GET /api/user/:id");
+  try {
+    const userData = await Favorite.findByPk(req.params.id, {
+      // JOIN with travellers, using the Trip through table
+      
+    });
+
+    if (!userData) {
+      res.status(404).json({ message: 'No favorited items!' });
+      return;
+    }
+
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 

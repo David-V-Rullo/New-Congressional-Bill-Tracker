@@ -31,7 +31,7 @@
       <div class="row p-2">
         <div class="col-md-2">
           <h6><a id="home-button">Home</a></h6>
-          <h6>Welcome <%= userData.name %></h6>
+          <h6 id = member-name>Welcome</h6>
         </div>
         <div class="col-md-10">
           <a class="btn btn-success" id="logout-button">Logout</a>
@@ -42,8 +42,19 @@
     <div class="container-fluid h-100 position-absolute" id="sidebar">
       <div class="row justify-content-start">
         <div class="col-md-2 side-bar">
-          <h5>Your Representatives</h5>
-          <%- include('partials/rep-card', {userData}) %>
+          <h5>Your Representative</h5>
+          <h6 id = rep-one-name></h4>
+          <p id = rep-one-party></p>
+          <a href id = rep-one-link></a>
+          <h5>Senators</h5>
+          <h6 id = rep-two-name></h4>
+          <p id = rep-two-party></p>
+          <a href id = rep-two-link></a>
+          <h6 id = rep-three-name></h4>
+          <p id = rep-three-party></p>
+           <a href id = rep-three-link></a>
+
+          
         </div>
         <div class="col-md-7 mx-auto h-100 position-relative">
           <h3 class="text-center px-5 mt-2">Your Favorite Bills</h3>
@@ -76,5 +87,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
     <script src="/js/function.js"></script>
     <script src="/js/bill-status.js"></script>
+    <script src="/js/members.js"></script>
+
   </body>
 </html>
